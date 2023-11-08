@@ -1,16 +1,7 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <button class="btn btn-success">Nueva Receta</button>
-    </div>
-  </div>
-  <hr />
-  <div class="row">
-    <div class="col-12">
-      <a
+<a
         href="#"
         class="list-group-item list-group-item-action bg-light clearfix"
-        *ngFor="let receta of recetas"
+        (click)="seleccionar()"
       >
         <div class="d-flex justify-content-between">
           <div>
@@ -24,10 +15,7 @@
               class="img-responsive"
               style="max-height: 50px"
             />
+            <button type="button" class="btn btn-success">Ver mas</button>
           </div>
         </div>
       </a>
-      <app-item-receta></app-item-receta>
-    </div>
-  </div>
-</div>

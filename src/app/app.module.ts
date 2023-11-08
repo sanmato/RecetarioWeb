@@ -3,24 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { RecetasComponent } from './recetas/recetas.component';
-import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
-import { DetalleRecetaComponent } from './recetas/detalle-receta/detalle-receta.component';
-import { ItemRecetaComponent } from './recetas/lista-recetas/item-receta/item-receta.component';
-import { ListaComprasComponent } from './lista-compras/lista-compras.component';
-import { EditarCompraComponent } from './lista-compras/editar-compra/editar-compra.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HomeModule } from './home/home.module';
+import { RecetasComponent } from './home/recetas/recetas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
-    RecetasComponent,
-    ListaRecetasComponent,
-    DetalleRecetaComponent,
-    ItemRecetaComponent,
-    ListaComprasComponent,
-    EditarCompraComponent,
+    NavbarComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
