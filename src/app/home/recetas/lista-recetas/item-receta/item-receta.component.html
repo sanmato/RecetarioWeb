@@ -1,1 +1,21 @@
-<p>item-receta works!</p>
+<a
+        href="#"
+        class="list-group-item list-group-item-action bg-light clearfix"
+        (click)="seleccionar()"
+      >
+        <div class="d-flex justify-content-between">
+          <div>
+            <h4 class="list-group-item-heading">{{ receta.nombre }}</h4>
+            <p class="list-group-item-text">{{ receta.descripcion }}</p>
+          </div>
+          <div>
+            <img
+              src="{{ receta.rutaImagen }}"
+              alt="{{ receta.nombre }}"
+              class="img-responsive"
+              style="max-height: 50px"
+            />
+            <button type="button" class="btn btn-success">Ver mas</button>
+          </div>
+        </div>
+      </a>

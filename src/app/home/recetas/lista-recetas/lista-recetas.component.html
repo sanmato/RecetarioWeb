@@ -7,27 +7,7 @@
   <hr />
   <div class="row">
     <div class="col-12">
-      <a
-        href="#"
-        class="list-group-item list-group-item-action bg-light clearfix"
-        *ngFor="let receta of recetas"
-      >
-        <div class="d-flex justify-content-between">
-          <div>
-            <h4 class="list-group-item-heading">{{ receta.nombre }}</h4>
-            <p class="list-group-item-text">{{ receta.descripcion }}</p>
-          </div>
-          <div>
-            <img
-              src="{{ receta.rutaImagen }}"
-              alt="{{ receta.nombre }}"
-              class="img-responsive"
-              style="max-height: 50px"
-            />
-          </div>
-        </div>
-      </a>
-      <app-item-receta></app-item-receta>
+     <app-item-receta *ngFor="let receta of recetas" [receta]="receta" (seleccion)="seleccionarReceta(receta)"></app-item-receta>
     </div>
   </div>
 </div>
