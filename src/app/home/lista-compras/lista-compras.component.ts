@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingrediente } from 'src/app/core/ingrediente.model';
+import { ServicioComprasService } from './servicio-compras.service';
 
 @Component({
   selector: 'app-lista-compras',
@@ -9,7 +10,9 @@ import { Ingrediente } from 'src/app/core/ingrediente.model';
 export class ListaComprasComponent implements OnInit {
   ingredientes: Ingrediente[] = [new Ingrediente('Naranjas', 5)];
 
-  constructor() {}
+  constructor(private servicioCompras: ServicioComprasService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(){
+    this.ingredientes=this.servicioCompras.getIngredientes();
+  }
 }

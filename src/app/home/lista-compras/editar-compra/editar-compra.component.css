@@ -1,0 +1,6 @@
+.error{
+    color: black;
+    background-color: red;
+    width: fit-content;
+    display: inline-block;
+}

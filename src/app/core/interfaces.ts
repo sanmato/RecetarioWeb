@@ -4,3 +4,8 @@ export interface IReceta{
     rutaImagen: string;
 
 }
+
+export interface IIngrediente{
+    nombre: string;
+    monto: number;
+}
