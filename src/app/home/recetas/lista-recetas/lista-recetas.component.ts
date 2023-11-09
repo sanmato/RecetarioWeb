@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Receta } from 'src/app/core/receta.model';
+import { ServicioRecetasService } from '../servicio-recetas.service';
 
 @Component({
   selector: 'app-lista-recetas',
@@ -8,26 +9,13 @@ import { Receta } from 'src/app/core/receta.model';
 })
 export class ListaRecetasComponent implements OnInit {
   
-  @Output() recetaSeleccionada: EventEmitter<Receta>= new EventEmitter();
+  recetas: Receta[] = [ ];
 
 
-  recetas: Receta[] = [
-    new Receta( 'Test de Receta',
-    'Una prueba para ver',
-    'https://www.clara.es/medio/2023/01/08/receta-calabaza-rellena-bolonesa_c46f79f3_1280x853.jpg'),
-    new Receta( 'Otro test de Receta',
-    'Otra prueba para ver',
-    'https://www.clara.es/medio/2023/01/08/receta-calabaza-rellena-bolonesa_c46f79f3_1280x853.jpg')
-  ];
+  constructor(private servicioReceta: ServicioRecetasService) {}
 
-
-  constructor() {}
-
-  ngOnInit(): void {}
-
-
-  seleccionarReceta(receta: Receta){
-    this.recetaSeleccionada.emit(receta);
-
+  ngOnInit(){
+    this.recetas=this.servicioReceta.getRecetas();
   }
+
 }

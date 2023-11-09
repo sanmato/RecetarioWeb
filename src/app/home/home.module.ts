@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ListaComprasComponent } from './lista-compras/lista-compras.component';
 import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -21,11 +22,12 @@ import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.com
     EditarCompraComponent,
     RecetasComponent,
     HeaderComponent,
-    HomePageComponent
+    HomePageComponent,
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class HomeModule { }

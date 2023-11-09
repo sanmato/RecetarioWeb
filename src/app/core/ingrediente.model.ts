@@ -1,4 +1,6 @@
-export class Ingrediente {
+import { IIngrediente } from "./interfaces";
+
+export class Ingrediente implements IIngrediente{
   public nombre: string;
   public monto: number;
 
