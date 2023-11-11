@@ -6,8 +6,8 @@ import { Ingrediente } from 'src/app/core/ingrediente.model';
 })
 export class ServicioComprasService {
   ingredientes: Ingrediente[] = [
-    new Ingrediente('manzanas', 5),
-    new Ingrediente('kiwi', 12),
+    new Ingrediente('manzanas', 5, 'unidades'),
+    new Ingrediente('kiwi', 12, 'unidades'),
   ];
 
   constructor() {}

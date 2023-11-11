@@ -49,7 +49,7 @@
           class="list-goup-item"
           *ngFor="let ingrediente of receta.ingredientes"
         >
-          {{ ingrediente.nombre }}-{{ ingrediente.monto }}
+          {{ ingrediente.nombre }} ({{ ingrediente.cantidad }} {{ ingrediente.unidad }})
         </li>
       </ul>
     </div>

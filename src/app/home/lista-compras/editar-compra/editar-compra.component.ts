@@ -18,7 +18,8 @@ export class EditarCompraComponent {
     if(this.formulario.invalid!) return;
     const ingrediente: Ingrediente={
       nombre:this.formulario.controls['nombre'].value,
-      monto:this.formulario.controls['monto'].value,
+      cantidad:this.formulario.controls['cantidad'].value,
+      unidad:this.formulario.controls['unidad'].value
     }
     this.servicioCompras.agregarIngrediente(ingrediente);
     this.router.navigateByUrl("/listaCompras");
@@ -26,7 +27,8 @@ export class EditarCompraComponent {
   
      formulario: FormGroup= this.formBuilder.group({
       nombre:['',[Validators.required]],
-      monto:['',[Validators.required]],
+      cantidad:['',[Validators.required]],
+      unidad:['',[Validators.required]],
     })
 
 }

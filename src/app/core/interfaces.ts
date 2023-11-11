@@ -10,5 +10,6 @@ export interface IReceta{
 
 export interface IIngrediente{
     nombre: string;
-    monto: number;
+    cantidad: number;
+    unidad: string;
 }

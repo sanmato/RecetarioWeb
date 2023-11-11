@@ -12,13 +12,13 @@ export class ServicioRecetasService {
       'Omelette',
       'Una prueba para ver',
       'https://www.paulinacocina.net/wp-content/uploads/2019/09/okokokok.jpg',
-      [new Ingrediente('Huevo', 2), new Ingrediente('Queso', 1)]
+      [new Ingrediente('Huevo', 2, 'unidades'), new Ingrediente('Queso', 20, 'grs')]
     ),
     new Receta(
       'Calabaza Rellena',
       'Otra prueba para ver',
       'https://www.clara.es/medio/2023/01/08/receta-calabaza-rellena-bolonesa_c46f79f3_1280x853.jpg',
-      [new Ingrediente('Calabaza', 1), new Ingrediente('Carne', 200)]
+      [new Ingrediente('Calabaza', 1, 'unidad'), new Ingrediente('Carne', 200, 'grs')]
     ),
   ];
 

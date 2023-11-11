@@ -8,7 +8,7 @@ import { ServicioComprasService } from './servicio-compras.service';
   styleUrls: ['./lista-compras.component.css'],
 })
 export class ListaComprasComponent implements OnInit {
-  ingredientes: Ingrediente[] = [new Ingrediente('Naranjas', 5)];
+  ingredientes: Ingrediente[] = [new Ingrediente('Naranjas', 5, 'unidades')];
 
   constructor(private servicioCompras: ServicioComprasService) {}
 
