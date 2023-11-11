@@ -19,4 +19,11 @@ export class ServicioComprasService {
   agregarIngrediente(ingrediente: Ingrediente) {
     this.ingredientes.push(ingrediente);
   }
+
+  agregarIngredientes(ingredientes: Ingrediente[]){
+    for(let ingrediente of ingredientes){
+      this.agregarIngrediente(ingrediente);
+    }
+    alert('Los ingredientes fueron agregados con éxito');
+  }
 }

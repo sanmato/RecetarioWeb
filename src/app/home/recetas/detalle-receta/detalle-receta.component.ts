@@ -9,7 +9,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
   styleUrls: ['./detalle-receta.component.css'],
 })
 export class DetalleRecetaComponent implements OnInit {
-  receta: Receta = new Receta('', '', '');
+  receta: Receta = new Receta('', '', '', []);
   id: number = 0;
 
   constructor(
@@ -27,5 +27,11 @@ export class DetalleRecetaComponent implements OnInit {
 
   editarReceta() {
     this.router.navigate(['editar'], { relativeTo: this.route });
+  }
+
+  agregarEnListaDeCompras() {
+    this.servicioReceta.agregarIngredientesEnListaDeCompras(
+      this.receta.ingredientes
+    );
   }
 }

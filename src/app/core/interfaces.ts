@@ -1,7 +1,10 @@
+import { Ingrediente } from "./ingrediente.model";
+
 export interface IReceta{
     nombre: string;
     descripcion: string;
     rutaImagen: string;
+    ingredientes: Ingrediente[];
 
 }
 
