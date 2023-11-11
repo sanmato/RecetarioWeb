@@ -12,7 +12,7 @@ export class ListaRecetasComponent implements OnInit {
   recetas: Receta[] = [ ];
 
 
-  constructor(private servicioReceta: ServicioRecetasService) {}
+  constructor(private servicioReceta:ServicioRecetasService) {}
 
   ngOnInit(){
     this.recetas=this.servicioReceta.getRecetas();

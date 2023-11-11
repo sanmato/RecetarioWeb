@@ -8,7 +8,7 @@ import { ServicioRecetasService } from './servicio-recetas.service';
   styleUrls: ['./recetas.component.css'],
 })
 export class RecetasComponent implements OnInit {
-  recetaSeleccionada: Receta = new Receta('', '', '');
+  recetaSeleccionada: Receta = new Receta('', '', '', []);
 
   constructor(private servicioReceta: ServicioRecetasService) {}
 
