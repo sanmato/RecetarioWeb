@@ -17,15 +17,8 @@ export class ListaRecetasComponent implements OnInit {
     private route: ActivatedRoute
   ) {}
 
-<<<<<<< HEAD
   ngOnInit() {
     this.recetas = this.servicioReceta.getRecetas();
-=======
-  constructor(private servicioReceta:ServicioRecetasService) {}
-
-  ngOnInit(){
-    this.recetas=this.servicioReceta.getRecetas();
->>>>>>> 4dae1e03a961cd423b42acc1e5503663a5fc4b60
   }
 
   agregarReceta() {
