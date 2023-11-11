@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Receta } from 'src/app/core/receta.model';
 import { ServicioRecetasService } from '../servicio-recetas.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-recetas',
@@ -8,14 +9,19 @@ import { ServicioRecetasService } from '../servicio-recetas.service';
   styleUrls: ['./lista-recetas.component.css'],
 })
 export class ListaRecetasComponent implements OnInit {
-  
-  recetas: Receta[] = [ ];
+  recetas: Receta[] = [];
 
+  constructor(
+    private servicioReceta: ServicioRecetasService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor(private servicioReceta: ServicioRecetasService) {}
-
-  ngOnInit(){
-    this.recetas=this.servicioReceta.getRecetas();
+  ngOnInit() {
+    this.recetas = this.servicioReceta.getRecetas();
   }
 
+  agregarReceta() {
+    this.router.navigate(['new'], { relativeTo: this.route });
+  }
 }

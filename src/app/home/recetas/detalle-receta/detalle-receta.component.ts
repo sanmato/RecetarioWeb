@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Receta } from 'src/app/core/receta.model';
 import { ServicioRecetasService } from '../servicio-recetas.service';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-receta',
@@ -14,7 +14,8 @@ export class DetalleRecetaComponent implements OnInit {
 
   constructor(
     private servicioReceta: ServicioRecetasService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,5 +23,9 @@ export class DetalleRecetaComponent implements OnInit {
       this.id = +params['id'];
       this.receta = this.servicioReceta.getReceta(this.id);
     });
+  }
+
+  editarReceta() {
+    this.router.navigate(['editar'], { relativeTo: this.route });
   }
 }

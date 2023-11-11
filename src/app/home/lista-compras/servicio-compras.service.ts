@@ -2,19 +2,21 @@ import { Injectable } from '@angular/core';
 import { Ingrediente } from 'src/app/core/ingrediente.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServicioComprasService {
+  ingredientes: Ingrediente[] = [
+    new Ingrediente('manzanas', 5),
+    new Ingrediente('kiwi', 12),
+  ];
 
-  ingredientes: Ingrediente[] =[new Ingrediente('manzanas', 5), new Ingrediente('kiwi', 12)]
+  constructor() {}
 
-  constructor() { }
-
-  getIngredientes(){
+  getIngredientes() {
     return this.ingredientes;
   }
 
-  agregarIngrediente(ingrediente: Ingrediente){
+  agregarIngrediente(ingrediente: Ingrediente) {
     this.ingredientes.push(ingrediente);
   }
 }
