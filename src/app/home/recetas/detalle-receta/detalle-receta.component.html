@@ -1,28 +1,41 @@
 <div class="row">
   <div class="col-xs-12">
-    <img [src]="receta.rutaImagen" alt="{{receta.nombre}}" class="img-responsive" style="max-height: 300px;" />
+    <img
+      [src]="receta.rutaImagen"
+      alt="{{ receta.nombre }}"
+      class="img-responsive"
+      style="max-height: 300px"
+    />
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>{{receta.nombre}}</h1>
+    <h1>{{ receta.nombre }}</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <div class="btn-group">
-      <button type="button" class="btn btn-primary dropdown-toggle">
+    <div class="btn-group" appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle"
+        data-bs-toggle="dropdown"
+      >
         Gestionar Receta <span class="caret"></span>
       </button>
       <ul class="dropdown-menu">
-        <li><a href="#">Agregar Ingredientes a la Lista de Compra</a></li>
-        <li><a href="#">Editar Receta</a></li>
-        <li><a href="#">Borrar Receta</a></li>
+        <li>
+          <a class="dropdown-item" href="#"
+            >Agregar Ingredientes a la Lista de Compra</a
+          >
+        </li>
+        <li><a class="dropdown-item" href="#">Editar Receta</a></li>
+        <li><a class="dropdown-item" href="#">Borrar Receta</a></li>
       </ul>
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">{{receta.descripcion}}</div>
+    <div class="col-xs-12">{{ receta.descripcion }}</div>
   </div>
   <div class="row">
     <div class="col-xs-12">Ingredientes</div>

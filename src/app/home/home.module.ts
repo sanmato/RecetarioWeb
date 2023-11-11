@@ -11,7 +11,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ListaComprasComponent } from './lista-compras/lista-compras.component';
 import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-
+import { RecetaInicioComponent } from './recetas/receta-inicio/receta-inicio.component';
+import { EditarRecetaComponent } from './recetas/editar-receta/editar-receta.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,9 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     RecetasComponent,
     HeaderComponent,
     HomePageComponent,
+    RecetaInicioComponent,
+    EditarRecetaComponent,
   ],
-  imports: [
-    CommonModule,
-    HomeRoutingModule,
-    ReactiveFormsModule
-  ]
+  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
 })
-export class HomeModule { }
+export class HomeModule {}

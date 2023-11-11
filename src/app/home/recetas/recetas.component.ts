@@ -5,23 +5,16 @@ import { ServicioRecetasService } from './servicio-recetas.service';
 @Component({
   selector: 'app-recetas',
   templateUrl: './recetas.component.html',
-  styleUrls: ['./recetas.component.css']
+  styleUrls: ['./recetas.component.css'],
 })
 export class RecetasComponent implements OnInit {
-
-  recetaSeleccionada: Receta= new Receta('', '', '');
+  recetaSeleccionada: Receta = new Receta('', '', '');
 
   constructor(private servicioReceta: ServicioRecetasService) {}
-  
-  ngOnInit(){
-    this.servicioReceta.recetaSeleccionada
-    .subscribe(
-      (receta: Receta) =>
-      { 
-        this.recetaSeleccionada= receta
-      }
-      )
-      
+
+  ngOnInit() {
+    this.servicioReceta.recetaSeleccionada.subscribe((receta: Receta) => {
+      this.recetaSeleccionada = receta;
+    });
   }
 }
-
