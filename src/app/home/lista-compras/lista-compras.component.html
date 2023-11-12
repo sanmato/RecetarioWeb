@@ -11,12 +11,12 @@
         {{ ingrediente.nombre }} ({{ ingrediente.cantidad }} {{ingrediente.unidad}})
         <button class="edit-button" (click)="editarIngrediente(i)">E</button>
       </a>
-    </ul>
-   
-      <td><button (click)="eliminarCliente(Cliente.id!)">X</button></td> -->
-      <div cclass="container-fluid">
+    </ul>-->
+  
+      <div class="container-fluid">
           <div class="row">
             <div class="col-lg-6">
+            <button class="btn btn-primary" (click)="vaciarLista()">Vaciar</button>
       <table>
         <thead>
             <tr>
@@ -30,6 +30,7 @@
                 <td>{{ ingrediente.nombre }} </td>
                 <td>({{ ingrediente.cantidad }} {{ingrediente.unidad}})</td>
                 <td><button class="btn btn-success" (click)="editarIngrediente(i)">Editar</button></td> 
+                <td><button class="btn btn-danger" (click)="eliminarIngrediente(i)">Eliminar</button></td>
             </tr>
         </tbody>
     </table>

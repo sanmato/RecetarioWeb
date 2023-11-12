@@ -41,4 +41,12 @@ export class ServicioComprasService {
     this.ingredientes[this.ingredienteEditable]=ingrediente;
   }
 
+  eliminarIngrediente(indice: number){
+    this.ingredientes.splice(indice, 1);
+  }
+
+  vaciarLista(){
+    this.ingredientes.splice(0,this.ingredientes.length);
+  }
+
 }

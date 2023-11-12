@@ -36,6 +36,9 @@ export class EditarCompraComponent implements OnInit{
       unidad:['',[Validators.required]],
     })
 
-   
+    borrarInfo(){
+      this.formulario.reset();
+    }
+ 
 
 }
