@@ -12,7 +12,7 @@ table {
 
   /* Estilos para el encabezado de la tabla */
   thead th {
-    background-color: #f7f0f0;
+    /* background-color: #f7f0f0; */
     color: #080808;
     text-align: left;
     padding: 1rem;
