@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Ingrediente } from 'src/app/core/ingrediente.model';
 
 @Injectable({
@@ -12,8 +12,14 @@ export class ServicioComprasService {
 
   constructor() {}
 
+  ingredienteEditable: number=0;
+
   getIngredientes() {
     return this.ingredientes;
+  }
+
+  getIngrediente(indice: number){
+    return this.ingredientes[indice];
   }
 
   agregarIngrediente(ingrediente: Ingrediente) {
@@ -26,4 +32,13 @@ export class ServicioComprasService {
     }
     alert('Los ingredientes fueron agregados con éxito');
   }
+
+  ingredinteParaEditar(indice:number){
+    this.ingredienteEditable= indice;
+  }
+  
+  editarIngrediente(ingrediente: Ingrediente){
+    this.ingredientes[this.ingredienteEditable]=ingrediente;
+  }
+
 }

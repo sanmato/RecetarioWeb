@@ -7,9 +7,10 @@ import { RecetaInicioComponent } from './home/recetas/receta-inicio/receta-inici
 import { DetalleRecetaComponent } from './home/recetas/detalle-receta/detalle-receta.component';
 import { EditarCompraComponent } from './home/lista-compras/editar-compra/editar-compra.component';
 import { EditarRecetaComponent } from './home/recetas/editar-receta/editar-receta.component';
+import { EditarIngredienteComponent } from './home/lista-compras/editar-ingrediente/editar-ingrediente.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomePageComponent },
+  // { path: 'home', component: HomePageComponent },
   {
     path: 'recetas',
     component: RecetasComponent,
@@ -21,11 +22,11 @@ const routes: Routes = [
     ],
   },
   { path: 'listacompras', component: ListaComprasComponent },
-  {
-    path: '**',
-    component: HomePageComponent,
-    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
-  },
+  // {
+  //   path: '**',
+  //   component: HomePageComponent,
+  //   loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
+  // },
 ];
 
 @NgModule({

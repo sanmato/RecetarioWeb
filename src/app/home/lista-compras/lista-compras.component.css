@@ -1,0 +1,41 @@
+.contenedor {
+    margin: 20 rem;
+    width: 80%;
+}
+
+/* Estilos para la tabla */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  /* Estilos para el encabezado de la tabla */
+  thead th {
+    background-color: #f7f0f0;
+    color: #080808;
+    text-align: left;
+    padding: 1rem;
+    font-weight: bold;
+  }
+
+  /* Estilos para las celdas de datos */
+  tbody td {
+    border: 1px solid #ccc;
+    padding: 1rem;
+  }
+
+  /* Estilos alternos para las filas */
+  tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+
+  a{
+    text-decoration: none;
+    color: black;
+  }
+
+  .edit-button :hover{
+    color: red;
+  }

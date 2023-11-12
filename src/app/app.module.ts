@@ -8,10 +8,12 @@ import { RecetasComponent } from './home/recetas/recetas.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DropdownDirective } from './core/dropdown.directive';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [AppComponent, DropdownDirective, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule],
   providers: [],
   bootstrap: [AppComponent],
 })

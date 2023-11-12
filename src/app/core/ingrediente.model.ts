@@ -1,11 +1,11 @@
 import { IIngrediente } from "./interfaces";
 
 export class Ingrediente implements IIngrediente{
-  public nombre: string;
-  public cantidad: number;
-  public unidad: string;
+  public nombre: string | undefined;
+  public cantidad: number | undefined;
+  public unidad: string | undefined;
 
-  constructor(nombre: string, cantidad: number, unidad: string) {
+  constructor(nombre: string | undefined, cantidad: number | undefined, unidad: string | undefined) {
     this.nombre = nombre;
     this.cantidad = cantidad;
     this.unidad= unidad;

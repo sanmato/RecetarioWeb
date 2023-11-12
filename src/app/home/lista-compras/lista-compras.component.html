@@ -1,16 +1,44 @@
-<div class="row">
-  <div class="col-xs-10">
-    <app-editar-compra></app-editar-compra>
-    <hr />
-    <ul class="list-group">
+<!-- <div class="row">
+  <div class="col-xs-10"> -->
+    <!-- <hr /> -->
+    <!-- <ul class="list-group">
       <a
         href="#"
         class="list-group-item"
         style="cursor: pointer"
-        *ngFor="let ingrediente of ingredientes"
+        *ngFor="let ingrediente of ingredientes; let i=index"
       >
         {{ ingrediente.nombre }} ({{ ingrediente.cantidad }} {{ingrediente.unidad}})
+        <button class="edit-button" (click)="editarIngrediente(i)">E</button>
       </a>
     </ul>
+   
+      <td><button (click)="eliminarCliente(Cliente.id!)">X</button></td> -->
+      <div cclass="container-fluid">
+          <div class="row">
+            <div class="col-lg-6">
+      <table>
+        <thead>
+            <tr>
+                <th>INGREDIENTE</th>
+                <th>CANTIDAD</th>
+                <th>EDITAR</th>
+            </tr>
+        </thead>
+        <tbody id="ingredientes">
+            <tr *ngFor="let ingrediente of ingredientes; let i=index">
+                <td>{{ ingrediente.nombre }} </td>
+                <td>({{ ingrediente.cantidad }} {{ingrediente.unidad}})</td>
+                <td><button class="btn btn-success" (click)="editarIngrediente(i)">Editar</button></td> 
+            </tr>
+        </tbody>
+    </table>
   </div>
+  <div class="col-lg-6">
+    <app-editar-compra></app-editar-compra>
 </div>
+
+
+  
+      
+  

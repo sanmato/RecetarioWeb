@@ -9,7 +9,7 @@ export interface IReceta{
 }
 
 export interface IIngrediente{
-    nombre: string;
-    cantidad: number;
-    unidad: string;
+    nombre: string |undefined;
+    cantidad: number | undefined;
+    unidad: string | undefined;
 }

@@ -1,0 +1,76 @@
+<!-- <h2 mat-dialog-title class="custom-dialog-title">Editar Persona</h2>
+
+<mat-dialog-content>
+    <form (ngSubmit)="editarIngrediente()" class="custom-form" [formGroup]="formulario" id="formulario">
+        <div class="form-field">
+          <label for="name">Nombre:</label>
+          <input type="text" id="nombre" class="form-control" formControlName="nombre">
+            </div>
+            <div class="error">
+                    <span *ngIf="formulario.controls['nombre'].getError('required') && formulario.touched">
+                    El campo es requerido</span>
+            </div>
+        
+    
+        <div class="form-field">         
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" class="form-control" formControlName="cantidad">
+          </div>
+          <div class="error">
+                  <span *ngIf="formulario.controls['cantidad'].getError('required') && formulario.touched">
+                      El campo es requerido</span>
+          </div>
+
+    
+        <div class="form-field">
+            <label for="unidad">Unidad de medida</label>
+            <input type="text" id="unidad" class="form-control" formControlName="unidad" placeholder="unidad, gr., ml.">
+          </div>
+          <div class="error">
+                  <span *ngIf="formulario.controls['unidad'].getError('required') && formulario.touched">
+                      El campo es requerido</span>
+        </div>
+        <button type="submit" class="custom-button">Guardar Cambios</button>
+      </form>
+      <div mat-dialog-actions>
+        <button mat-button (click)="closeDialog()" class="custom-button" >Cancelar</button>
+      </div>
+     -->
+
+     <h2 mat-dialog-title class="custom-dialog-title">Editar Ingrediente</h2>
+
+<div mat-dialog-content>
+    <form (ngSubmit)="editarIngrediente()" class="custom-form" [formGroup]="formulario">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="nombre" name="nombre" [placeholder]="ingrediente.nombre" formControlName="nombre">
+        </div>
+        <div class="error">
+          <span *ngIf="formulario.controls['nombre'].getError('required') && formulario.touched">
+          El campo es requerido</span>
+        </div>
+    
+        <div class="form-group">
+          <label for="cantidad">Cantidad:</label>
+          <input type="number" id="cantidad" name="cantidad" [valueAsNumber]="ingrediente.cantidad" formControlName="cantidad" >
+        </div>
+        <div class="error">
+          <span *ngIf="formulario.controls['cantidad'].getError('required') && formulario.touched">
+              El campo es requerido</span>
+        </div>
+    
+        <div class="form-group">
+          <label for="unidad">Unidad:</label>
+          <input type="text" id="unidad" name="unidad" [placeholder]="ingrediente.unidad"  formControlName="unidad">
+        </div>
+        <div class="error">
+          <span *ngIf="formulario.controls['unidad'].getError('required') && formulario.touched">
+              El campo es requerido</span>
+        </div>
+    
+        <button type="submit" class="btn btn-success" [disabled]="formulario.invalid">Guardar Cambios</button>
+      </form>
+      <div mat-dialog-actions>
+        <button class="btn btn-danger" (click)="closeDialog()">Cancelar</button>
+      </div>
+</div>

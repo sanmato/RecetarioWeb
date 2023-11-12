@@ -13,10 +13,11 @@ import { RecetaInicioComponent } from './recetas/receta-inicio/receta-inicio.com
 import { EditarRecetaComponent } from './recetas/editar-receta/editar-receta.component';
 import { ListaRecetasComponent } from './recetas/lista-recetas/lista-recetas.component';
 import { DetalleRecetaComponent } from './recetas/detalle-receta/detalle-receta.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { EditarIngredienteComponent } from './lista-compras/editar-ingrediente/editar-ingrediente.component';
 
 @NgModule({
   declarations: [
-    ItemRecetaComponent,
     DetalleRecetaComponent,
     ListaRecetasComponent,
     ListaComprasComponent,
@@ -26,7 +27,9 @@ import { DetalleRecetaComponent } from './recetas/detalle-receta/detalle-receta.
     HomePageComponent,
     RecetaInicioComponent,
     EditarRecetaComponent,
+    ItemRecetaComponent,
+    EditarIngredienteComponent,
   ],
-  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule],
+  imports: [CommonModule, HomeRoutingModule, ReactiveFormsModule, MatDialogModule, FormsModule]
 })
 export class HomeModule {}
