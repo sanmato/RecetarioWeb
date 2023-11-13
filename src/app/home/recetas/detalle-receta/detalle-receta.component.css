@@ -1,0 +1,13 @@
+.container{
+    padding-left: 2rem;
+    margin-top: 3rem;
+    box-shadow: 0 4px 8px 0 #5a78d8, 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-sizing: border-box;
+    display: inline-block; 
+    text-align: left;
+}
+
+img{
+    margin-top: 1rem;
+}
+

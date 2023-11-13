@@ -4,18 +4,18 @@
   [routerLink]="[index]"
   routerLinkActive="active-link"
 >
-  <div class="d-flex justify-content-between">
-    <div>
-      <h4 class="list-group-item-heading">{{ receta.nombre }}</h4>
-      <p class="list-group-item-text">{{ receta.descripcion }}</p>
-    </div>
-    <div>
-      <img
-        src="{{ receta.rutaImagen }}"
-        alt="{{ receta.nombre }}"
-        class="img-responsive"
-        style="max-height: 50px"
-      />
+  <!-- <div class="d-flex justify-content-between"> -->
+    <div class="card" style="width: 10rem; height: 15rem;">
+      <div>
+        <img class="card-img-top"
+          src="{{ receta.rutaImagen }}"
+          alt="{{ receta.nombre }}"
+          style="height: 6rem"
+        />
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ receta.nombre }}</h5>
+        <p class="card-text">{{ receta.descripcion }}</p>
     </div>
   </div>
 </a>
