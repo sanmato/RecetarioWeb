@@ -40,8 +40,19 @@
             Gestionar
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Guardar Información</a></li>
-            <li><a class="dropdown-item" href="#">Extraer Información</a></li>
+            <li>
+              <a
+                style="cursor: pointer"
+                class="dropdown-item"
+                (click)="onAlmacenarInformacion()"
+                >Guardar Información</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" (click)="onObtenerInformacion()"
+                >Extraer Información</a
+              >
+            </li>
           </ul>
         </li>
       </ul>

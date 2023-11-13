@@ -34,4 +34,9 @@ export class DetalleRecetaComponent implements OnInit {
       this.receta.ingredientes
     );
   }
+
+  onEliminarReceta() {
+    this.servicioReceta.eliminarReceta(this.id);
+    this.router.navigate(['/recetas']);
+  }
 }

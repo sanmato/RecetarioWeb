@@ -10,11 +10,21 @@ import { DropdownDirective } from './core/dropdown.directive';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
+import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { ServicioDataStorage } from './home/recetas/servicio-data-storage.service';
 
 @NgModule({
   declarations: [AppComponent, DropdownDirective, NavbarComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MatDialogModule],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    CommonModule,
+    HttpClientModule,
+  ],
+  providers: [ServicioDataStorage],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -8,6 +8,7 @@ import { DetalleRecetaComponent } from './home/recetas/detalle-receta/detalle-re
 import { EditarCompraComponent } from './home/lista-compras/editar-compra/editar-compra.component';
 import { EditarRecetaComponent } from './home/recetas/editar-receta/editar-receta.component';
 import { EditarIngredienteComponent } from './home/lista-compras/editar-ingrediente/editar-ingrediente.component';
+import { ServicioRecetasResolver } from './home/recetas/servicio-recetas-resolver.service';
 
 const routes: Routes = [
   // { path: 'home', component: HomePageComponent },
@@ -17,8 +18,16 @@ const routes: Routes = [
     children: [
       { path: '', component: RecetaInicioComponent },
       { path: 'new', component: EditarRecetaComponent },
-      { path: ':id', component: DetalleRecetaComponent },
-      { path: ':id/editar', component: EditarRecetaComponent },
+      {
+        path: ':id',
+        component: DetalleRecetaComponent,
+        resolve: [ServicioRecetasResolver],
+      },
+      {
+        path: ':id/editar',
+        component: EditarRecetaComponent,
+        resolve: [ServicioRecetasResolver],
+      },
     ],
   },
   { path: 'listacompras', component: ListaComprasComponent },

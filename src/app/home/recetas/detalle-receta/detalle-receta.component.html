@@ -35,7 +35,11 @@
         <li>
           <a class="dropdown-item" (click)="editarReceta()">Editar Receta</a>
         </li>
-        <li><a class="dropdown-item" href="#">Borrar Receta</a></li>
+        <li>
+          <a class="dropdown-item" (click)="onEliminarReceta()"
+            >Borrar Receta</a
+          >
+        </li>
       </ul>
     </div>
   </div>
@@ -49,7 +53,8 @@
           class="list-goup-item"
           *ngFor="let ingrediente of receta.ingredientes"
         >
-          {{ ingrediente.nombre }} ({{ ingrediente.cantidad }} {{ ingrediente.unidad }})
+          {{ ingrediente.nombre }} ({{ ingrediente.cantidad }}
+          {{ ingrediente.unidad }})
         </li>
       </ul>
     </div>
