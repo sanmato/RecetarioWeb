@@ -1,25 +1,69 @@
 <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-6">
-        <form id="formulario" (ngSubmit)="registrarse()" [formGroup]="formularioUsuario" >
-          <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
-          
-    <div class="form-floating">
-    <input type="email" class="form-control" id="floatingInput" name="email" formControlName="email">
-    <label for="floatingInput">Email</label>
-    </div>
-    <div class="error">
-        <span *ngIf="formularioUsuario.controls['email'].getError('required') && formularioUsuario.touched">
-            El campo es requerido</span>
-    </div>
-
-    <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="clave" formControlName="clave">
-        <label for="floatingPassword">Contraseña</label>
+  <div class="row justify-content-md-center">
+    <div class="col-md-6">
+      <div class="alert alert-danger" *ngIf="error">
+        <p>{{ error }}</p>
       </div>
-      <div class="error">
-        <span *ngIf="formularioUsuario.controls['clave'].getError('required') && formularioUsuario.touched">
-            El campo es requerido</span>
+      <form
+        id="formulario"
+        (ngSubmit)="registrarse()"
+        [formGroup]="formularioUsuario"
+      >
+        <h1 class="h3 mb-3 fw-normal">Registrarse</h1>
+
+        <div class="form-floating">
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            formControlName="email"
+            required
+            email
+          />
+          <label for="floatingInput">Email</label>
+        </div>
+        <div class="error">
+          <span
+            *ngIf="
+              formularioUsuario.controls['email'].getError('required') &&
+              formularioUsuario.touched
+            "
+          >
+            El campo es requerido</span
+          >
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="clave"
+            formControlName="clave"
+            required
+            minlength="6"
+          />
+          <label for="floatingPassword">Contraseña</label>
+        </div>
+        <div class="error">
+          <span
+            *ngIf="
+              formularioUsuario.controls['clave'].getError('required') &&
+              formularioUsuario.touched
+            "
+          >
+            El campo es requerido</span
+          >
+        </div>
+        <button
+          class="w-100 btn btn-lg btn-primary mt-1"
+          type="submit"
+          [disabled]="formularioUsuario.invalid"
+        >
+          Aceptar
+        </button>
+      </form>
     </div>
-      <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" [disabled]="formularioUsuario.invalid">Aceptar</button>
-</form>
+  </div>
+</div>
