@@ -1,20 +1,22 @@
 <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-6">
-        <form (ngSubmit)="logIn()">
+        <form id="formulario" (ngSubmit)="logIn()" [formGroup]="formularioUsuario" >
           <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
   
           <div class="form-floating">
-            <input type="email" placeholder="Ingrese su email" name="email" [(ngModel)]="usuario.email" >
+            <input type="email" class="form-control" id="floatingInput" name="email" formControlName="email">
             <label for="floatingInput">Email</label>
           </div>
           <div class="form-floating">
-            <input type="password" name="clave" [(ngModel)]="usuario.clave">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="clave" formControlName="clave">
             <label for="floatingPassword">Contraseña</label>
           </div>
-          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit">Iniciar sesion</button>
-          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" >Registrarse</button>
+          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" [disabled]="formularioUsuario.invalid">Iniciar sesion</button>
+          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" [routerLink]="['registro']">Registrarse</button>
         </form>
       </div>
     </div>
   </div>
+
+  

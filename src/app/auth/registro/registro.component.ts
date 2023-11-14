@@ -2,13 +2,12 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/core/usuario.modelo';
 
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-registro',
+  templateUrl: './registro.component.html',
+  styleUrls: ['./registro.component.css']
 })
-export class LoginComponent {
+export class RegistroComponent {
 
   constructor(private formBuilder: FormBuilder){}
 
@@ -19,7 +18,7 @@ export class LoginComponent {
     clave:['', [Validators.required]],
   })
 
-  logIn(){
+  registrarse(){
     if(this.formularioUsuario.valid) {
     const usuario: Usuario={
       email:this.formularioUsuario.controls['email'].value,
@@ -28,3 +27,4 @@ export class LoginComponent {
   }
  }
 }
+

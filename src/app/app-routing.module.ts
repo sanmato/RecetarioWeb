@@ -10,9 +10,11 @@ import { EditarRecetaComponent } from './home/recetas/editar-receta/editar-recet
 import { EditarIngredienteComponent } from './home/lista-compras/editar-ingrediente/editar-ingrediente.component';
 import { ServicioRecetasResolver } from './home/recetas/servicio-recetas-resolver.service';
 import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
   {
     path: 'recetas',
     component: RecetasComponent,
