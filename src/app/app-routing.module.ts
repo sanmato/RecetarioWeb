@@ -9,9 +9,12 @@ import { EditarCompraComponent } from './home/lista-compras/editar-compra/editar
 import { EditarRecetaComponent } from './home/recetas/editar-receta/editar-receta.component';
 import { EditarIngredienteComponent } from './home/lista-compras/editar-ingrediente/editar-ingrediente.component';
 import { ServicioRecetasResolver } from './home/recetas/servicio-recetas-resolver.service';
+import { LoginComponent } from './auth/login/login.component';
+import { RegistroComponent } from './auth/registro/registro.component';
 
 const routes: Routes = [
-  // { path: 'home', component: HomePageComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'registro', component: RegistroComponent },
   {
     path: 'recetas',
     component: RecetasComponent,
