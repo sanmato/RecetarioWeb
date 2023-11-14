@@ -13,3 +13,8 @@ export interface IIngrediente{
     cantidad: number | undefined;
     unidad: string | undefined;
 }
+
+export interface IUsuario{
+    email: string;
+    clave: string;
+}
