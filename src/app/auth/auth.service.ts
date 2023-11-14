@@ -1,6 +1,7 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, throwError } from 'rxjs';
+import { Subject, catchError, tap, throwError } from 'rxjs';
+import { Usuario } from '../core/usuario.model';
 
 //ESTA INTERFAZ REPRESENTA LOS TIPOS DE CARGA DE RESPUESTA EN FIREBASE, POR ESO ESTÁ ACÁ.
 interface AuthDatosResponse {
@@ -15,6 +16,8 @@ interface AuthDatosResponse {
 
 @Injectable({ providedIn: 'root' })
 export class servicioAuth {
+  user = new Subject<Usuario>();
+
   constructor(private http: HttpClient) {}
 
   alta(email: string, password: string) {
@@ -27,7 +30,17 @@ export class servicioAuth {
           returnSecureToken: true,
         }
       )
-      .pipe(catchError(this.manejarError));
+      .pipe(
+        catchError(this.manejarError),
+        tap((responseData) => {
+          this.manejarAutenticacion(
+            responseData.email,
+            responseData.localId,
+            responseData.idToken,
+            +responseData.expirenIn
+          );
+        })
+      );
   }
 
   logueo(email: string, password: string) {
@@ -40,7 +53,17 @@ export class servicioAuth {
           returnSecureToken: true,
         }
       )
-      .pipe(catchError(this.manejarError));
+      .pipe(
+        catchError(this.manejarError),
+        tap((responseData) => {
+          this.manejarAutenticacion(
+            responseData.email,
+            responseData.localId,
+            responseData.idToken,
+            +responseData.expirenIn
+          );
+        })
+      );
   }
 
   private manejarError(errorResponse: HttpErrorResponse) {
@@ -58,5 +81,16 @@ export class servicioAuth {
         break;
     }
     return throwError(() => new Error(mensajeError));
+  }
+
+  private manejarAutenticacion(
+    email: string,
+    userId: string,
+    token: string,
+    expirenIn: number
+  ) {
+    const fechaExpiracion = new Date(new Date().getTime() + expirenIn * 1000);
+    const user = new Usuario(email, userId, token, fechaExpiracion);
+    this.user.next(user);
   }
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/core/usuario.model';
 import { servicioAuth } from '../auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +12,8 @@ import { servicioAuth } from '../auth.service';
 export class RegistroComponent {
   constructor(
     private formBuilder: FormBuilder,
-    private authServicio: servicioAuth
+    private authServicio: servicioAuth,
+    private router: Router
   ) {}
 
   usuario: Usuario = new Usuario('', '', '', new Date(''));
@@ -31,6 +33,7 @@ export class RegistroComponent {
       this.authServicio.alta(email, password).subscribe(
         (dataResponse) => {
           console.log(dataResponse);
+          this.router.navigate(['/recetas']);
         },
         (mensajeError) => {
           console.log(mensajeError);

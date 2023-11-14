@@ -13,4 +13,11 @@ export class Usuario implements IUsuario {
     this.email = email;
     this.clave = clave;
   }
+
+  get token() {
+    if (!this._tokenExpirationDate || new Date() > this._tokenExpirationDate) {
+      return null;
+    }
+    return this._token;
+  }
 }

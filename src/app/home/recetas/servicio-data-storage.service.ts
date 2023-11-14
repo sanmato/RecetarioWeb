@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Receta } from 'src/app/core/receta.model';
 import { ServicioRecetasService } from './servicio-recetas.service';
 import { map, tap } from 'rxjs';
+import { servicioAuth } from 'src/app/auth/auth.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,8 @@ import { map, tap } from 'rxjs';
 export class ServicioDataStorage {
   constructor(
     private http: HttpClient,
-    private servicioRecetas: ServicioRecetasService
+    private servicioRecetas: ServicioRecetasService,
+    private servicioAuth: servicioAuth
   ) {}
 
   almacenarRecetas() {
