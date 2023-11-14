@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <form (ngSubmit)="logIn()">
+          <h1 class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
+  
+          <div class="form-floating">
+            <input type="email" placeholder="Ingrese su email" name="email" [(ngModel)]="usuario.email" >
+            <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" name="clave" [(ngModel)]="usuario.clave">
+            <label for="floatingPassword">Contraseña</label>
+          </div>
+          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit">Iniciar sesion</button>
+          <button class="w-100 btn btn-lg btn-primary mt-1" type="submit" >Registrarse</button>
+        </form>
+      </div>
+    </div>
+  </div>
