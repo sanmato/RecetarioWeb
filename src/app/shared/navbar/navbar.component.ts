@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { servicioAuth } from 'src/app/auth/auth.service';
 import { ServicioDataStorage } from 'src/app/home/recetas/servicio-data-storage.service';
 
 @Component({
@@ -7,7 +8,7 @@ import { ServicioDataStorage } from 'src/app/home/recetas/servicio-data-storage.
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  constructor(private servicioDataStorage: ServicioDataStorage) {}
+  constructor(private servicioDataStorage: ServicioDataStorage, private servicioAuth: servicioAuth) {}
 
   onAlmacenarInformacion() {
     this.servicioDataStorage.almacenarRecetas();
@@ -15,5 +16,9 @@ export class NavbarComponent {
 
   onObtenerInformacion() {
     this.servicioDataStorage.obtenerRecetas().subscribe();
+  }
+
+  cerrarSesion(){
+    this.servicioAuth.logOut();
   }
 }
