@@ -6,27 +6,27 @@
           <div class="col-xs-10 form-group">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" class="form-control" formControlName="nombre">
-          </div>
-          <div class="error">
-                    <span *ngIf="formulario.controls['nombre'].getError('required') && formulario.touched">
-                    El campo es requerido</span>
+            <div>
+              <small class="text-danger"
+              *ngIf="validar('nombre', 'required')"> El campo es requerido </small>
+              </div>
           </div>
           </div>
           <div class="col-xs-10 form-group">
             <label for="cantidad">Cantidad</label>
             <input type="number" id="cantidad" class="form-control" formControlName="cantidad">
-          </div>
-          <div class="error">
-                  <span *ngIf="formulario.controls['cantidad'].getError('required') && formulario.touched">
-                      El campo es requerido</span>
+            <div>
+              <small class="text-danger"
+              *ngIf="validar('cantidad', 'required')"> El campo es requerido </small>
+              </div>
           </div>
           <div class="col-xs-10 form-group">
             <label for="unidad">Unidad de medida</label>
             <input type="text" id="unidad" class="form-control" formControlName="unidad" placeholder="unidad, gr., ml.">
-          </div>
-          <div class="error">
-                  <span *ngIf="formulario.controls['unidad'].getError('required') && formulario.touched">
-                      El campo es requerido</span>
+            <div>
+              <small class="text-danger"
+              *ngIf="validar('unidad', 'required')"> El campo es requerido </small>
+              </div>
           </div>
         <div class="row">
           <div class="col-xs-10">

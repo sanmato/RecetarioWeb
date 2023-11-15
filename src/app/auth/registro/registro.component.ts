@@ -21,9 +21,16 @@ export class RegistroComponent {
   error: string = '';
 
   formularioUsuario: FormGroup = this.formBuilder.group({
-    email: ['', [Validators.required]],
-    clave: ['', [Validators.required]],
+    email: ['', [Validators.required, Validators.email]],
+    clave: ['', [Validators.required, Validators.minLength(6)]],
   });
+
+  validar(field: string, error: string){
+    return this.formularioUsuario.controls[field].getError(error)
+    &&
+    this.formularioUsuario.controls[field].touched
+  }
+
 
   registrarse() {
     if (this.formularioUsuario.valid) {

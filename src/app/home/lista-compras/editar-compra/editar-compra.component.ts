@@ -36,9 +36,17 @@ export class EditarCompraComponent implements OnInit{
       unidad:['',[Validators.required]],
     })
 
+    validar(field: string, error: string){
+      return this.formulario.controls[field].getError(error)
+      &&
+      this.formulario.controls[field].touched
+    }
+  
+
     borrarInfo(){
       this.formulario.reset();
     }
+
  
 
 }
