@@ -1,14 +1,12 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12">
-      <button class="btn btn-success" (click)="agregarReceta()">
+<div class="container justify-content-center">
+  <div class="gap-2 col-6 mx-auto">
+  <br>
+      <button class="btn btn-success " (click)="agregarReceta()">
         Nueva Receta
       </button>
-    </div>
-  </div>
-  <hr />
-  <div class="row">
-    <div class="col-12 card-data">
+   </div>
+  <hr/>
+    <div class="card-data">
       <app-item-receta
         *ngFor="let receta of recetas; let i = index"
         [receta]="receta"
@@ -16,4 +14,6 @@
       ></app-item-receta>
     </div>
   </div>
-</div>
+
+
+
