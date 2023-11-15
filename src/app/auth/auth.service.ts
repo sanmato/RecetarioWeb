@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject, catchError, tap, throwError } from 'rxjs';
+import { Subject, catchError, tap, throwError, BehaviorSubject } from 'rxjs';
 import { Usuario } from '../core/usuario.model';
 
 //ESTA INTERFAZ REPRESENTA LOS TIPOS DE CARGA DE RESPUESTA EN FIREBASE, POR ESO ESTÁ ACÁ.
@@ -16,7 +16,7 @@ interface AuthDatosResponse {
 
 @Injectable({ providedIn: 'root' })
 export class servicioAuth {
-  user = new Subject<Usuario>();
+  user = new BehaviorSubject<Usuario | null>(null);
 
   constructor(private http: HttpClient) {}
 
