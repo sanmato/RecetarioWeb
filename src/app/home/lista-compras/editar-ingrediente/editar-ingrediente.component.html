@@ -37,35 +37,35 @@
       </div>
      -->
 
-     <h2 mat-dialog-title class="custom-dialog-title">Editar Ingrediente</h2>
+    <h2 mat-dialog-title class="custom-dialog-title">Editar Ingrediente</h2>
 
-<div mat-dialog-content>
+    <div mat-dialog-content>
     <form (ngSubmit)="editarIngrediente()" class="custom-form" [formGroup]="formulario">
         <div class="form-group">
           <label for="name">Nombre:</label>
           <input type="text" id="nombre" name="nombre" [placeholder]="ingrediente.nombre" formControlName="nombre">
-        </div>
-        <div class="error">
-          <span *ngIf="formulario.controls['nombre'].getError('required') && formulario.touched">
-          El campo es requerido</span>
-        </div>
+        <div>
+          <small class="text-danger"
+          *ngIf="validar('nombre', 'required')"> El campo es requerido </small>
+          </div>
+      </div>
     
         <div class="form-group">
           <label for="cantidad">Cantidad:</label>
           <input type="number" id="cantidad" name="cantidad" [valueAsNumber]="ingrediente.cantidad" formControlName="cantidad" >
-        </div>
-        <div class="error">
-          <span *ngIf="formulario.controls['cantidad'].getError('required') && formulario.touched">
-              El campo es requerido</span>
+        <div>
+          <small class="text-danger"
+          *ngIf="validar('cantidad', 'required')"> El campo es requerido </small>
+          </div>
         </div>
     
         <div class="form-group">
           <label for="unidad">Unidad:</label>
           <input type="text" id="unidad" name="unidad" [placeholder]="ingrediente.unidad"  formControlName="unidad">
-        </div>
-        <div class="error">
-          <span *ngIf="formulario.controls['unidad'].getError('required') && formulario.touched">
-              El campo es requerido</span>
+          <div>
+            <small class="text-danger"
+            *ngIf="validar('unidad', 'required')"> El campo es requerido </small>
+            </div>
         </div>
     
         <button type="submit" class="btn btn-success" [disabled]="formulario.invalid">Guardar Cambios</button>

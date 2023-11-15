@@ -14,48 +14,34 @@
         <div class="form-floating">
           <input
             type="email"
+            [class.is-invalid]="validar('email', 'email')"
             class="form-control"
             id="email"
             name="email"
             formControlName="email"
-            required
-            email
           />
           <label for="floatingInput">Email</label>
-        </div>
-        <div class="error">
-          <span
-            *ngIf="
-              formularioUsuario.controls['email'].getError('required') &&
-              formularioUsuario.touched
-            "
-          >
-            El campo es requerido</span
-          >
+        <div>
+          <small class="text-danger"
+          *ngIf="validar('email', 'email')">El email es invalido</small> 
+          </div>
         </div>
 
         <div class="form-floating">
           <input
             type="password"
+            [class.is-invalid]="validar('clave', 'minlength')"
             id="password"
             class="form-control"
             placeholder="clave"
             formControlName="clave"
-            required
-            minlength="6"
           />
           <label for="floatingPassword">Contraseña</label>
         </div>
-        <div class="error">
-          <span
-            *ngIf="
-              formularioUsuario.controls['clave'].getError('required') &&
-              formularioUsuario.touched
-            "
-          >
-            El campo es requerido</span
-          >
-        </div>
+          <div>
+            <small class="text-danger"
+            *ngIf="validar('clave', 'minlength')">La contraseña debe tener al menos 6 caracteres</small> 
+          </div>
         <button
           class="w-100 btn btn-lg btn-primary mt-1"
           type="submit"

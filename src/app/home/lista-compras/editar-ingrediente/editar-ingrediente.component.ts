@@ -26,6 +26,12 @@ export class EditarIngredienteComponent implements OnInit {
     unidad:['',[Validators.required]],
   })
 
+  validar(field: string, error: string){
+    return this.formulario.controls[field].getError(error)
+    &&
+    this.formulario.controls[field].touched
+  }
+
   editarIngrediente(){
     if(this.formulario.valid) {
     const ingrediente: Ingrediente={
