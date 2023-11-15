@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, catchError, tap, throwError, BehaviorSubject } from 'rxjs';
 import { Usuario } from '../core/usuario.model';
+import { Router } from '@angular/router';
 
 //ESTA INTERFAZ REPRESENTA LOS TIPOS DE CARGA DE RESPUESTA EN FIREBASE, POR ESO ESTÁ ACÁ.
 interface AuthDatosResponse {
@@ -18,7 +19,7 @@ interface AuthDatosResponse {
 export class servicioAuth {
   user = new BehaviorSubject<Usuario | null>(null);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   alta(email: string, password: string) {
     return this.http
@@ -64,6 +65,11 @@ export class servicioAuth {
           );
         })
       );
+  }
+
+  logOut(){
+    this.user.next(null);
+    this.router.navigate(['login']);
   }
 
   private manejarError(errorResponse: HttpErrorResponse) {
