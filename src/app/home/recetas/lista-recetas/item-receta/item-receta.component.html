@@ -1,8 +1,4 @@
-<a
-  class="list-group-item list-group-item-action bg-light clearfix"
-  [routerLink]="[index]"
-  routerLinkActive="active-link"
->
+
   <!-- <div class="d-flex justify-content-between">
     <div>
       <h4 class="list-group-item-heading">{{ receta.nombre }}</h4>
@@ -17,16 +13,22 @@
       />
     </div>
   </div> -->
+  <a
+  class="list-group-item list-group-item-action bg-light clearfix"
+  [routerLink]="[index]"
+  routerLinkActive="active-link"
+>
 
-  <div class="card mt-3" style="width: 33rem">
+  <div class="card mt-3" style="width: 14rem; height:18rem">
     <img
       src="{{ receta.rutaImagen }}"
       alt="{{ receta.nombre }}"
       class="card-img-top img-responsive"
+      style="width: 14rem; height:9rem"
     />
     <div class="card-body">
       <h5 class="card-title">{{ receta.nombre }}</h5>
-      <p class="card-text">{{ receta.descripcion }}</p>
     </div>
   </div>
 </a>
+

@@ -4,3 +4,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.card{
+    margin-left: 1rem;
+    margin-top: 1rem;
+    box-shadow: 0px 10px 10px 0 rgba(188, 75, 23, 0.2);
+    text-align: center;
+    
+}
