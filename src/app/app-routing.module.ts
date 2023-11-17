@@ -34,6 +34,10 @@ const routes: Routes = [
     ],
   },
   { path: 'listacompras', component: ListaComprasComponent },
+  {
+    path: '**',
+    redirectTo: 'login',
+  },
   // {
   //   path: '**',
   //   component: HomePageComponent,
