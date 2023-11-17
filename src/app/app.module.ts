@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { HomeModule } from './home/home.module';
 import { RecetasComponent } from './home/recetas/recetas.component';
 import { DropdownDirective } from './core/dropdown.directive';
-import { NavbarComponent } from './shared/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
@@ -21,7 +20,6 @@ import { servicioInterceptorAuth } from './auth/auth.interceptor.service';
   declarations: [
     AppComponent,
     DropdownDirective,
-    NavbarComponent,
     LoginComponent,
     RegistroComponent,
   ],

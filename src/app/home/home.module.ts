@@ -16,6 +16,7 @@ import { DetalleRecetaComponent } from './recetas/detalle-receta/detalle-receta.
 import { MatDialogModule } from '@angular/material/dialog';
 import { EditarIngredienteComponent } from './lista-compras/editar-ingrediente/editar-ingrediente.component';
 import { BrowserModule } from '@angular/platform-browser';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BrowserModule } from '@angular/platform-browser';
     EditarRecetaComponent,
     ItemRecetaComponent,
     EditarIngredienteComponent,
+    NavbarComponent,
   ],
   imports: [
     CommonModule,

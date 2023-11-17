@@ -1,6 +1,6 @@
-<div class="container">
+<div class="container-lg align-items-center justify-content-center vh-100 mt-5">
   <div class="row justify-content-md-center">
-    <div class="col-md-6">
+    <div class="col-6">
       <div class="alert alert-danger" *ngIf="error">
         <p>{{ error }}</p>
       </div>
@@ -21,9 +21,10 @@
             formControlName="email"
           />
           <label for="floatingInput">Email</label>
-        <div>
-          <small class="text-danger"
-          *ngIf="validar('email', 'email')">El email es invalido</small> 
+          <div>
+            <small class="text-danger" *ngIf="validar('email', 'email')"
+              >El email es invalido</small
+            >
           </div>
         </div>
 
@@ -38,10 +39,11 @@
           />
           <label for="floatingPassword">Contraseña</label>
         </div>
-          <div>
-            <small class="text-danger"
-            *ngIf="validar('clave', 'minlength')">La contraseña debe tener al menos 6 caracteres</small> 
-          </div>
+        <div>
+          <small class="text-danger" *ngIf="validar('clave', 'minlength')"
+            >La contraseña debe tener al menos 6 caracteres</small
+          >
+        </div>
         <button
           class="w-100 btn btn-lg btn-primary mt-1"
           type="submit"

@@ -1,7 +1,7 @@
 <!-- <div class="row">
   <div class="col-xs-10"> -->
-    <!-- <hr /> -->
-    <!-- <ul class="list-group">
+<!-- <hr /> -->
+<!-- <ul class="list-group">
       <a
         href="#"
         class="list-group-item"
@@ -12,36 +12,44 @@
         <button class="edit-button" (click)="editarIngrediente(i)">E</button>
       </a>
     </ul>-->
-  
-      <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-6">
-            
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-6">
       <table>
         <thead>
-            <tr>
-                <th>INGREDIENTE</th>
-                <th>CANTIDAD</th>
-                <th>EDITAR</th>
-                <th>ELIMINAR</th>
-                <th><button class="btn btn-primary" (click)="vaciarLista()">Vaciar Lista</button></th>
-            </tr>
+          <tr>
+            <th>INGREDIENTE</th>
+            <th>CANTIDAD</th>
+            <th>EDITAR</th>
+            <th>ELIMINAR</th>
+            <th>
+              <button class="btn btn-primary" (click)="vaciarLista()">
+                Vaciar Lista
+              </button>
+            </th>
+          </tr>
         </thead>
         <tbody id="ingredientes">
-            <tr *ngFor="let ingrediente of ingredientes; let i=index">
-                <td>{{ ingrediente.nombre }} </td>
-                <td>({{ ingrediente.cantidad }} {{ingrediente.unidad}})</td>
-                <td><button class="btn btn-success" (click)="editarIngrediente(i)">E</button></td> 
-                <td><button class="btn btn-danger" (click)="eliminarIngrediente(i)">X</button></td>
-            </tr>
+          <tr *ngFor="let ingrediente of ingredientes; let i = index">
+            <td>{{ ingrediente.nombre }}</td>
+            <td>({{ ingrediente.cantidad }} {{ ingrediente.unidad }})</td>
+            <td>
+              <button class="btn btn-success" (click)="editarIngrediente(i)">
+                E
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-danger" (click)="eliminarIngrediente(i)">
+                X
+              </button>
+            </td>
+          </tr>
         </tbody>
-    </table>
+      </table>
+    </div>
+    <div class="col-lg-6">
+      <app-editar-compra></app-editar-compra>
+    </div>
   </div>
-  <div class="col-lg-6">
-    <app-editar-compra></app-editar-compra>
 </div>
-
-
-  
-      
-  
