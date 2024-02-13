@@ -67,9 +67,46 @@ export class servicioAuth {
       );
   }
 
-  logOut(){
+  autoLogin() {
+    console.log('Ejecutando autoLogin...');
+    const dataUsuarioString: string | null = localStorage.getItem('dataUsuario');
+    if (!dataUsuarioString) {
+      console.log('No se encontraron datos de usuario en localStorage. Saliendo de autoLogin...');
+      return;
+    }
+  
+    const dataUsuario: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(dataUsuarioString);
+  
+    console.log('Datos de usuario parseados:', dataUsuario);
+  
+    const usuarioCargado = new Usuario(
+      dataUsuario.email,
+      dataUsuario.id,
+      dataUsuario._token,
+      new Date(dataUsuario._tokenExpirationDate)
+    );
+  
+    console.log('Usuario cargado:', usuarioCargado);
+
+    
+  
+    if (usuarioCargado.token) {
+      console.log('Usuario autenticado. Emitiendo usuario...');
+      this.user.next(usuarioCargado);
+    } else {
+      console.log('El token de usuario no existe o está caducado. No se emitirá ningún usuario.');
+    }
+  }
+
+  logOut() {
     this.user.next(null);
     this.router.navigate(['login']);
+    localStorage.removeItem('dataUsuario');
   }
 
   private manejarError(errorResponse: HttpErrorResponse) {
@@ -98,5 +135,13 @@ export class servicioAuth {
     const fechaExpiracion = new Date(new Date().getTime() + expirenIn * 1000);
     const user = new Usuario(email, userId, token, fechaExpiracion);
     this.user.next(user);
+    //Serializamos la información del objeto a una cadena de texto para guardarlo en un almacenamiento local.
+    localStorage.setItem('dataUsuario', JSON.stringify(user));
+  }
+
+  isAuthenticated(): boolean {
+    // Comprobamos si el usuario actual está autenticado
+    const user = this.user.value;
+    return !!user;
   }
 }

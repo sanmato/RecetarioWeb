@@ -11,6 +11,7 @@ import { EditarIngredienteComponent } from './home/lista-compras/editar-ingredie
 import { ServicioRecetasResolver } from './home/recetas/servicio-recetas-resolver.service';
 import { LoginComponent } from './auth/login/login.component';
 import { RegistroComponent } from './auth/registro/registro.component';
+import { authGuard } from './auth/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   {
     path: 'recetas',
     component: RecetasComponent,
+    canActivate: [authGuard],
     children: [
       { path: '', component: RecetaInicioComponent },
       { path: 'new', component: EditarRecetaComponent },
@@ -33,7 +35,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'listacompras', component: ListaComprasComponent },
+  { path: 'listacompras', component: ListaComprasComponent, canActivate: [authGuard]},
   {
     path: '**',
     redirectTo: 'login',

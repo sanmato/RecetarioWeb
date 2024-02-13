@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { servicioAuth } from 'src/app/auth/auth.service';
 
 
 @Component({
@@ -7,10 +8,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent {
-
-  constructor() {
-    
-  }
  
 
 }
