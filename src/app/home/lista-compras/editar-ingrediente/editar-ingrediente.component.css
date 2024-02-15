@@ -3,3 +3,18 @@
     width: fit-content;
     display: inline-block;
 }
+
+.custom-dialog-title {
+    background-color: #eeebeb;
+    color: rgb(10, 9, 9);
+    font-size: 24px;
+}
+
+.mat-dialog-container {
+    padding: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.cdk-overlay-backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }

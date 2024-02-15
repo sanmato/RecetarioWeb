@@ -27,7 +27,7 @@ export class EditarCompraComponent implements OnInit{
       unidad:this.formulario.controls['unidad'].value
     }
     this.servicioCompras.agregarIngrediente(ingrediente);
-    this.router.navigate(['listaDeCompras']);
+    // this.router.navigate(['listaDeCompras']);
     }
   
      formulario: FormGroup= this.formBuilder.group({

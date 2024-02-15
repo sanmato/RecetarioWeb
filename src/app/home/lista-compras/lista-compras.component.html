@@ -35,14 +35,12 @@
             <td>{{ ingrediente.nombre }}</td>
             <td>({{ ingrediente.cantidad }} {{ ingrediente.unidad }})</td>
             <td>
-              <button class="btn btn-success" (click)="editarIngrediente(i)">
-                E
-              </button>
+              <i class="bi bi-pencil" (click)="editarIngrediente(i)">
+              </i>
             </td>
             <td>
-              <button class="btn btn-danger" (click)="eliminarIngrediente(i)">
-                X
-              </button>
+              <i class="bi bi-trash" (click)="eliminarIngrediente(i)">
+              </i>
             </td>
           </tr>
         </tbody>

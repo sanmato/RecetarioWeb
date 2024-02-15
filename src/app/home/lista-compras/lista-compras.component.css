@@ -1,6 +1,7 @@
-.contenedor {
-    margin: 20 rem;
-    width: 80%;
+.container-fluid {
+    margin-top: 3%;
+    width: 100%;
+    text-align: center;
 }
 
 /* Estilos para la tabla */
@@ -38,4 +39,8 @@ table {
 
   .edit-button :hover{
     color: red;
+  }
+
+  i:hover {
+    color: red; 
   }

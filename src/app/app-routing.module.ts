@@ -35,7 +35,7 @@ const routes: Routes = [
       },
     ],
   },
-  { path: 'listacompras', component: ListaComprasComponent, canActivate: [authGuard]},
+  { path: ':listacompras', component: ListaComprasComponent, canActivate: [authGuard]},
   {
     path: '**',
     redirectTo: 'login',
