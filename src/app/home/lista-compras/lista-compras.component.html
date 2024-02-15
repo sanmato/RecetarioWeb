@@ -16,6 +16,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-6">
+      <div class="table-responsive">
       <table>
         <thead>
           <tr>
@@ -35,21 +36,20 @@
             <td>{{ ingrediente.nombre }}</td>
             <td>({{ ingrediente.cantidad }} {{ ingrediente.unidad }})</td>
             <td>
-              <button class="btn btn-success" (click)="editarIngrediente(i)">
-                E
-              </button>
+              <i class="bi bi-pencil" (click)="editarIngrediente(i)">
+              </i>
             </td>
             <td>
-              <button class="btn btn-danger" (click)="eliminarIngrediente(i)">
-                X
-              </button>
+              <i class="bi bi-trash" (click)="eliminarIngrediente(i)">
+              </i>
             </td>
           </tr>
         </tbody>
       </table>
     </div>
+    </div>
     <div class="col-lg-6">
       <app-editar-compra></app-editar-compra>
     </div>
   </div>
-</div>
+  </div>

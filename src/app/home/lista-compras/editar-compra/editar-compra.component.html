@@ -3,7 +3,7 @@
     <div class="col-xs-12">
       <form id="formulario" (ngSubmit)="onAgregarIngrediente()"  [formGroup]="formulario">
         <div class="row">
-          <div class="col-xs-10 form-group">
+          <div class="col-xs-10 form-group mb-2">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre" class="form-control" formControlName="nombre">
             <div>
@@ -12,7 +12,7 @@
               </div>
           </div>
           </div>
-          <div class="col-xs-10 form-group">
+          <div class="col-xs-10 form-group mb-2">
             <label for="cantidad">Cantidad</label>
             <input type="number" id="cantidad" class="form-control" formControlName="cantidad">
             <div>
@@ -20,7 +20,7 @@
               *ngIf="validar('cantidad', 'required')"> El campo es requerido </small>
               </div>
           </div>
-          <div class="col-xs-10 form-group">
+          <div class="col-xs-10 form-group mb-2">
             <label for="unidad">Unidad de medida</label>
             <input type="text" id="unidad" class="form-control" formControlName="unidad" placeholder="unidad, gr., ml.">
             <div>
@@ -29,7 +29,7 @@
               </div>
           </div>
         <div class="row">
-          <div class="col-xs-10">
+          <div class="btn-group" role="group" aria-label="Button group">
             <button class="btn btn-success" type="submit" >Agregar</button>
             <button class="btn btn-primary" type="button" (click)="borrarInfo()">Borrar</button>
           </div>
@@ -37,3 +37,5 @@
       </form>
     </div>
   </div>
+
+  
